@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="iphone-context.xml"/>
+    <import resource="samsung-context.xml"/>
+
+    <bean id="t1000" class="kz.kaznitu.lessons.start.ModelT1000"
+          scope="prototype" autowire="byType">
+
+        <property name="videoKarta" ref="samsungVideoKarta"/>
+
+        <constructor-arg name="color" value="Black" index="0"/>
+        <constructor-arg name="year" value="2005" index="1"/>
+        <constructor-arg name="soundEnabled" value="false" index="2"/>
+    </bean>
+
+</beans>
